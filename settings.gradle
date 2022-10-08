@@ -1,4 +1,4 @@
-rootProject.name = 'javaguru_2'
+
 include 'BookLibrary'
 include 'src'
 
