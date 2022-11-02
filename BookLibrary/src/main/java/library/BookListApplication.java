@@ -1,9 +1,9 @@
 package library;
 
 import library.console_ui.*;
-import library.dataBase.DataBase;
-import library.dataBase.InMemoryDatabaseImpl;
-import library.services.*;
+import library.core.dataBase.DataBase;
+import library.core.dataBase.InMemoryDatabaseImpl;
+import library.core.services.*;
 
 
 import java.util.Scanner;
@@ -12,10 +12,13 @@ import java.util.Scanner;
 public class BookListApplication {
 
     private static DataBase dataBase = new InMemoryDatabaseImpl();
-    private static AddBookService addBookService = new AddBookService(dataBase);
+
+    private static AddBookValidator addBookValidator = new AddBookValidator();
+    private static AddBookService addBookService = new AddBookService(dataBase, addBookValidator);
     private static AddBookUIAction addBookUIAction = new AddBookUIAction(addBookService);
 
-    private static DeleteBookService deleteBookService = new DeleteBookService(dataBase);
+    private static DeleteBookValidation validation = new DeleteBookValidation();
+    private static DeleteBookService deleteBookService = new DeleteBookService(dataBase, validation);
     private static DeleteBookUIAction deleteBookUIAction = new DeleteBookUIAction(deleteBookService);
 
     private static FindBookByAuthorService findBookByAuthorService = new FindBookByAuthorService(dataBase);
@@ -26,6 +29,10 @@ public class BookListApplication {
 
     private static PrintAllBookService printAllBookService = new PrintAllBookService(dataBase);
     private static PrintAllBooksUIAction printAllBooksUIAction = new PrintAllBooksUIAction(printAllBookService);
+
+    private static SearchBooksValidator searchBooksValidator = new SearchBooksValidator();
+    private static SearchBooksService searchBooksService = new SearchBooksService(dataBase,searchBooksValidator);
+    private static SearchBooksUIAction searchBooksUIAction = new SearchBooksUIAction(searchBooksService);
 
     public static void main(String[] args) {
 
@@ -56,6 +63,9 @@ public class BookListApplication {
                 break;
             }
             case 5:
+                searchBooksUIAction.execute();
+                break;
+            case 6:
                 finishWorkUIAction.execute();
                 break;
             default:
@@ -79,7 +89,8 @@ public class BookListApplication {
         System.out.println("2 : Remove book");
         System.out.println("3 : Print all books");
         System.out.println("4 : Find buy Author");
-        System.out.println("5 : Finish");
+        System.out.println("5 : Search Book");
+        System.out.println("6 : Finish");
 
         System.out.println("");
     }

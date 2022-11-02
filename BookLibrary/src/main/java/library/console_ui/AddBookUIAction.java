@@ -1,7 +1,11 @@
 package library.console_ui;
 
 
-import library.services.AddBookService;
+import library.Book;
+import library.core.request.AddBookRequest;
+import library.core.response.AddBookResponse;
+import library.core.response.CoreError;
+import library.core.services.AddBookService;
 
 import java.util.Scanner;
 
@@ -19,7 +23,16 @@ public class AddBookUIAction implements UIAction {
         String author = scanner.nextLine();
         System.out.println("Enter title of Book :");
         String title = scanner.nextLine();
-        addBookService.execute(author,title);
-        System.out.println("Your book was added to list.");
+        AddBookRequest request = new AddBookRequest(author,title);
+        AddBookResponse response = addBookService.execute(request);
+        if (response.hasError()) {
+            response.getErrors().forEach(coreError -> System.out.println(coreError.getField() + " "
+            + coreError.getDescription()));
+            System.out.println("Your book not been Added!");
+        } else {
+            System.out.println("New book id - " + response.getBook().getId());
+            System.out.println("Book with id " + response.getBook().getId() + " been added!");
+        }
+
     }
 }
