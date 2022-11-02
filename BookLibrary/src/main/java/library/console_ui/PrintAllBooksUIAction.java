@@ -1,7 +1,9 @@
 package library.console_ui;
 
-import library.dataBase.DataBase;
-import library.services.PrintAllBookService;
+import library.core.request.GetAllBooksTitleRequest;
+import library.core.response.GetAllBooksTitleResponse;
+import library.core.services.PrintAllBookService;
+
 
 public class PrintAllBooksUIAction implements UIAction {
     private PrintAllBookService printAllBookService;
@@ -13,7 +15,9 @@ public class PrintAllBooksUIAction implements UIAction {
     @Override
     public void execute() {
         System.out.println("Book list :");
-        printAllBookService.execute();
+        GetAllBooksTitleRequest getAllBookTitle = new GetAllBooksTitleRequest();
+        GetAllBooksTitleResponse getAllBooksTitleResponse = printAllBookService.execute(getAllBookTitle);
+        getAllBooksTitleResponse.getBookList().forEach(System.out::println);
         System.out.println("Book list End!");
         System.out.println("");
     }

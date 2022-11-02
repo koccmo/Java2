@@ -1,7 +1,7 @@
 package library.console_ui;
 
-import library.dataBase.DataBase;
-import library.services.FinishWorkService;
+import library.core.request.ExitRequest;
+import library.core.services.FinishWorkService;
 
 public class FinishWorkUIAction implements UIAction {
     private FinishWorkService finishWorkService;
@@ -12,7 +12,8 @@ public class FinishWorkUIAction implements UIAction {
 
     @Override
     public void execute() {
-        finishWorkService.execute();
+        ExitRequest exitRequest= new ExitRequest();
+        finishWorkService.execute(exitRequest);
         System.out.println("Good Bye!");
     }
 }

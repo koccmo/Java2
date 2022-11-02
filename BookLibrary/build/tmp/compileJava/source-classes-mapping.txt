@@ -1,30 +1,74 @@
-library/services/FinishWorkService.java
- library.services.FinishWorkService
-library/dataBase/DataBase.java
- library.dataBase.DataBase
-library/dataBase/InMemoryDatabaseImpl.java
- library.dataBase.InMemoryDatabaseImpl
-library/console_ui/FinishWorkUIAction.java
- library.console_ui.FinishWorkUIAction
-library/Book.java
- library.Book
-library/console_ui/PrintAllBooksUIAction.java
- library.console_ui.PrintAllBooksUIAction
-library/console_ui/FindBookByAuthorUIAction.java
- library.console_ui.FindBookByAuthorUIAction
-library/services/FindBookByAuthorService.java
- library.services.FindBookByAuthorService
-library/services/AddBookService.java
- library.services.AddBookService
-library/services/PrintAllBookService.java
- library.services.PrintAllBookService
-library/services/DeleteBookService.java
- library.services.DeleteBookService
-library/console_ui/UIAction.java
- library.console_ui.UIAction
-library/console_ui/DeleteBookUIAction.java
- library.console_ui.DeleteBookUIAction
+library/core/request/AddBookRequest.java
+ library.core.request.AddBookRequest
+library/core/services/PrintAllBookService.java
+ library.core.services.PrintAllBookService
+library/console_ui/SearchBooksUIAction.java
+ library.console_ui.SearchBooksUIAction
+library/core/services/AddBookService.java
+ library.core.services.AddBookService
 library/console_ui/AddBookUIAction.java
  library.console_ui.AddBookUIAction
+library/core/services/SearchBooksValidator.java
+ library.core.services.SearchBooksValidator
+library/core/dataBase/InMemoryDatabaseImpl.java
+ library.core.dataBase.InMemoryDatabaseImpl
+library/console_ui/PrintAllBooksUIAction.java
+ library.console_ui.PrintAllBooksUIAction
+library/core/response/AddBookResponse.java
+ library.core.response.AddBookResponse
+library/core/services/FinishWorkService.java
+ library.core.services.FinishWorkService
+library/core/response/DeleteBookResponse.java
+ library.core.response.DeleteBookResponse
+library/console_ui/UIAction.java
+ library.console_ui.UIAction
+library/core/request/SearchBooksRequest.java
+ library.core.request.SearchBooksRequest
+library/Book.java
+ library.Book
+library/core/services/SearchBooksService.java
+ library.core.services.SearchBooksService
+library/core/response/FindByAuthorResponse.java
+ library.core.response.FindByAuthorResponse
+library/Demo.java
+ library.Demo
+library/core/response/CoreError.java
+ library.core.response.CoreError
+library/core/request/DeleteBookRequest.java
+ library.core.request.DeleteBookRequest
+library/core/response/ExitResponse.java
+ library.core.response.ExitResponse
+library/core/services/AddBookValidator.java
+ library.core.services.AddBookValidator
+library/core/dataBase/DataBase.java
+ library.core.dataBase.DataBase
+library/core/request/FindByAuthorRequest.java
+ library.core.request.FindByAuthorRequest
+library/core/request/Ordering.java
+ library.core.request.Ordering
+library/core/services/DeleteBookValidation.java
+ library.core.services.DeleteBookValidation
+library/console_ui/FinishWorkUIAction.java
+ library.console_ui.FinishWorkUIAction
+library/core/services/DeleteBookService.java
+ library.core.services.DeleteBookService
+library/console_ui/FindBookByAuthorUIAction.java
+ library.console_ui.FindBookByAuthorUIAction
+library/core/services/FindBookByAuthorService.java
+ library.core.services.FindBookByAuthorService
+library/core/request/ExitRequest.java
+ library.core.request.ExitRequest
+library/core/response/GetAllBooksTitleResponse.java
+ library.core.response.GetAllBooksTitleResponse
+library/core/request/Paging.java
+ library.core.request.Paging
+library/console_ui/DeleteBookUIAction.java
+ library.console_ui.DeleteBookUIAction
+library/core/response/SearchBooksResponse.java
+ library.core.response.SearchBooksResponse
+library/core/response/CoreResponse.java
+ library.core.response.CoreResponse
 library/BookListApplication.java
  library.BookListApplication
+library/core/request/GetAllBooksTitleRequest.java
+ library.core.request.GetAllBooksTitleRequest
